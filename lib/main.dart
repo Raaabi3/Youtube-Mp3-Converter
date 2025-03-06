@@ -6,7 +6,7 @@ import 'package:youtube_mp3/Views/HomeScreen.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (_) => Homecontroller(),
+      create: (_) => HomeController(),
       child: const MyApp(),
     ));
 }

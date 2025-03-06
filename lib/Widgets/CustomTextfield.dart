@@ -7,7 +7,23 @@ class Customtextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final homeController = Provider.of<Homecontroller>(context, listen: false);
-    return TextField(controller: homeController.textcontroller );
+    final homeController = Provider.of<HomeController>(context, listen: false);
+    return TextField(
+      controller: homeController.textcontroller,
+      decoration: InputDecoration(
+        labelText: "Enter Youtube link",
+        hintText: 'https://youtu.be/example',
+        hintStyle: const TextStyle(
+          color: Colors.grey,
+          fontWeight: FontWeight.bold,
+        ),
+        prefixIcon: const Icon(Icons.link),
+        border: const OutlineInputBorder(),
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.black),
+        ),
+        errorText: homeController.getErrorMessage, // SHOW ERROR HERE
+      ),
+    );
   }
 }
